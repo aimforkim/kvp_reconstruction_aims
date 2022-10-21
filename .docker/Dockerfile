@@ -78,7 +78,7 @@ RUN mkdir -p dev_ws/src
 WORKDIR /dev_ws/src
 
 # Clone pkgs
-RUN ["/bin/bash", "-c", "git clone https://github.com/rjwb1/realsense-ros.git&&\"]
+RUN ["/bin/bash", "-c", "git clone https://github.com/rjwb1/realsense-ros.git"]
 
 # Copy local pkg's from host to container
 COPY . /dev_ws/src/
