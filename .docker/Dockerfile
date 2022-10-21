@@ -85,10 +85,10 @@ COPY . /dev_ws/src/
 
 # Build catkin workspace
 WORKDIR /dev_ws
-# RUN ["/bin/bash", "-c", "source /opt/ros/$ROSDISTRO/setup.bash &&\
-#     catkin config --cmake-args -DCMAKE_BUILD_TYPE=Release &&\
-#     catkin build \
-#     "]
+RUN ["/bin/bash", "-c", "source /opt/ros/$ROSDISTRO/setup.bash &&\
+    catkin config --cmake-args -DCMAKE_BUILD_TYPE=Release &&\
+    catkin build \
+    "]
 
 # Set shell to zsh
 SHELL ["zsh", "chsh -s ~/.zshrc" ]
