@@ -1,3 +1,13 @@
 {
-    "ros.distro": "humble"
+    "ros.distro": "noetic",
+    "cmake.configureOnOpen": false,
+
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true
+      },
+
+      "python.linting.pylintEnabled": true,
+      "python.linting.enabled": true,
+      "problems.decorations.enabled": false
 }
