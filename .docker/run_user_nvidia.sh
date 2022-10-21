@@ -18,4 +18,4 @@ docker run -it --privileged \
     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
     --net=host \
     --gpus 'all,"capabilities=compute,display,graphics,utility"' \
-    moveit1_ur:latest
+    kvp_recon_ros:latest
