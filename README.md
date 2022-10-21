@@ -13,7 +13,6 @@ Contents of container
 
 ## References
 
--[industrial reconstruction](https://github.com/ros-industrial/industrial_reconstruction)
--[realsense-ros](https://github.com/rjwb1/realsense-ros)
--[kuka var proxy](https://github.com/ImtsSrl/KUKAVARPROXY)
--[kuka var proxy msg format](https://github.com/akselov/kukavarproxy-msg-format/blob/master/python/kukavarproxy.py) (Python)
+-[industrial reconstruction](https://github.com/ros-industrial/industrial_reconstruction)  
+-[realsense-ros](https://github.com/rjwb1/realsense-ros)  
+-[kuka var proxy](https://github.com/ImtsSrl/KUKAVARPROXY)  
