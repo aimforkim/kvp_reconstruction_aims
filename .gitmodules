@@ -1,3 +1,4 @@
 [submodule "ros_osv"]
 	path = ros_osv
 	url = git@github.com:vinceHuyghe/ros_osv.git
+	branch = dev
