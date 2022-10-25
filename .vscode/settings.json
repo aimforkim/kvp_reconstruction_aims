@@ -17,7 +17,8 @@
       ],
       "python.analysis.extraPaths": [
         "/dev_ws/devel/lib/python3/dist-packages",
-        "/opt/ros/noetic/lib/python3/dist-packages"
+        "/opt/ros/noetic/lib/python3/dist-packages",
+        "./ros_osv/src"
       ],
       "python.linting.flake8Enabled": true,
       "cSpell.words": [

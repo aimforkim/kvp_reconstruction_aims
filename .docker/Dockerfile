@@ -52,13 +52,14 @@ RUN apt-get update && apt-get install -y \
     ros-$ROSDISTRO-rqt-top \
     ros-$ROSDISTRO-rqt-reconfigure \
     ros-$ROSDISTRO-rqt-tf-tree \
+    ros-$ROSDISTRO-rviz \
     # Realsense
     software-properties-common \
     ros-$ROS_DISTRO-rqt-image-view \
     ros-$ROS_DISTRO-ddynamic-reconfigure \
     ros-$ROS_DISTRO-rgbd-launch 
 
-# Add repo and install realsense pkgs
+# Realsense
 RUN apt-key adv \
     --keyserver keyserver.ubuntu.com \
     --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE || \
