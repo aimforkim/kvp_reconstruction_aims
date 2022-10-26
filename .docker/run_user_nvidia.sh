@@ -16,6 +16,7 @@ docker run -it --privileged \
     --volume="/etc/shadow:/etc/shadow:ro" \
     --volume="/etc/sudoers.d:/etc/sudoers.d:ro" \
     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
+    --volume="/dev:/dev" \
     --net=host \
     --gpus 'all,"capabilities=compute,display,graphics,utility"' \
     kvp_recon_ros:latest
