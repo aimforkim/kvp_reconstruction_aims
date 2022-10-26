@@ -34,7 +34,10 @@ RUN pip3 install -U --no-cache-dir\
     flake8-length \
     flake8-todo \
     flake8-quotes \
-    black
+    black \
+    numpy \
+    open3d \
+    pyquaternion
 
 # ROS
 RUN apt-get update && apt-get install -y \
