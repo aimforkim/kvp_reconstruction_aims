@@ -5,3 +5,4 @@
 [submodule "industrial_reconstruction"]
 	path = industrial_reconstruction
 	url = git@github.com:vinceHuyghe/industrial_reconstruction.git
+	branch = ros1
