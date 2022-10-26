@@ -2,3 +2,6 @@
 	path = ros_osv
 	url = git@github.com:vinceHuyghe/ros_osv.git
 	branch = dev
+[submodule "industrial_reconstruction"]
+	path = industrial_reconstruction
+	url = git@github.com:vinceHuyghe/industrial_reconstruction.git
