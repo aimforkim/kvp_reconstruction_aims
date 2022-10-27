@@ -12,7 +12,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV TERM xterm-256color
 
 # Tools
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install --no-install-recommends -y \
     zsh \
     ssh \
     git \
@@ -40,7 +40,7 @@ RUN pip3 install -U --no-cache-dir\
     pyquaternion
 
 # ROS
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install --no-install-recommends -y \
     pkg-config \
     python3-catkin-tools \
     python3-rosdep \

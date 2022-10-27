@@ -1,27 +1,29 @@
 {
-    "ros.distro": "noetic",
-    "cmake.configureOnOpen": false,
-
-    "[python]": {
-        "editor.defaultFormatter": "ms-python.black-formatter",
-        "editor.formatOnSave": true
-      },
-      "black-formatter.args": ["-S"],
-
-      "python.linting.pylintEnabled": false,
-      "python.linting.enabled": true,
-      "problems.decorations.enabled": false,
-      "python.autoComplete.extraPaths": [
-        "/dev_ws/devel/lib/python3/dist-packages",
-        "/opt/ros/noetic/lib/python3/dist-packages"
-      ],
-      "python.analysis.extraPaths": [
-        "/dev_ws/devel/lib/python3/dist-packages",
-        "/opt/ros/noetic/lib/python3/dist-packages",
-        "./ros_osv/src"
-      ],
-      "python.linting.flake8Enabled": true,
-      "cSpell.words": [
-        "openshowvar"
-      ]
+  "problems.decorations.enabled": false,
+  "ros.distro": "noetic",
+  "cmake.configureOnOpen": false,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true
+  },
+  "black-formatter.args": [
+    "-S"
+  ],
+  "python.linting.pylintEnabled": true,
+  "python.linting.flake8Enabled": true,
+  "python.linting.pylintArgs": ["--disable=C0114,C0115,C0116"],  
+  "python.autoComplete.extraPaths": [
+    "/dev_ws/devel/lib/python3/dist-packages",
+    "/opt/ros/noetic/lib/python3/dist-packages",
+    "./ros_osv/src"
+  ],
+  "python.analysis.extraPaths": [
+    "/dev_ws/devel/lib/python3/dist-packages",
+    "/opt/ros/noetic/lib/python3/dist-packages",
+    "./ros_osv/src"
+  ],
+  "cSpell.words": [
+    "openshowvar"
+  ],
+  "python.linting.enabled": true
 }
