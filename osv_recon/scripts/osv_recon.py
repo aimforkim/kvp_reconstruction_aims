@@ -13,8 +13,8 @@ from std_msgs.msg import Bool
 
 # reconstruction parameters
 start_srv_req = StartReconstructionRequest()
-start_srv_req.tracking_frame = 'tcp'
-start_srv_req.relative_frame = 'base_link'
+start_srv_req.tracking_frame = 'tcp_frame'
+start_srv_req.relative_frame = 'base_frame'
 start_srv_req.translation_distance = 0.0
 start_srv_req.rotational_distance = 0.0
 start_srv_req.live = True
@@ -38,7 +38,7 @@ class OsvRecon:
     def __init__(self) -> None:
 
         self.name = rospy.get_name()
-        self.do_sub = rospy.Subscriber('/DO_state', Bool, self.do_callback())
+        self.do_sub = rospy.Subscriber('/DO_state', Bool, self.do_callback)
         self.recon_started = False
         rospy.wait_for_service('/start_reconstruction')
         rospy.loginfo(f'{self.name} waiting for /start_reconstruction srv')
@@ -48,8 +48,8 @@ class OsvRecon:
         self.stop_recon = rospy.ServiceProxy('/stop_reconstruction', StopReconstruction)
 
     def do_callback(self, do_state) -> None:
-
-        if not self.recon_started and do_state:
+        
+        if not self.recon_started and do_state.data:
 
             resp = self.start_recon(start_srv_req)
             if resp:
@@ -58,7 +58,7 @@ class OsvRecon:
             else:
                 rospy.loginfo(f'{self.name}: failed to start reconstruction')
 
-        if self.recon_started and not do_state:
+        if self.recon_started and not do_state.data:
 
             resp = self.stop_recon(stop_srv_req)
             if resp:
