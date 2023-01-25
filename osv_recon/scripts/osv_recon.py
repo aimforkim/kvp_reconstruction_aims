@@ -13,8 +13,8 @@ from std_msgs.msg import Bool
 
 # reconstruction parameters
 start_srv_req = StartReconstructionRequest()
-start_srv_req.tracking_frame = 'tcp_frame'
-start_srv_req.relative_frame = 'base_frame'
+start_srv_req.tracking_frame = 'tcp_link'
+start_srv_req.relative_frame = 'base_link'
 start_srv_req.translation_distance = 0.0
 start_srv_req.rotational_distance = 0.0
 start_srv_req.live = True

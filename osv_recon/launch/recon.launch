@@ -1,5 +1,5 @@
 <launch>
-    <node pkg="tf" type="static_transform_publisher" name="camera_link_broadcaster" args="0 0 0 0 -0.7071068 0 0.7071068 tcp_frame camera_link 100" />
+    <node pkg="tf" type="static_transform_publisher" name="camera_link_broadcaster" args="0 0 0 0 -0.7071068 0 0.7071068 tcp_link camera_link 100" />
     <node type="rviz" name="rviz" pkg="rviz" args="-d $(find osv_recon)/rviz/osv_recon.rviz" />
     <node name="osv" pkg="ros_osv" type="osv_node.py" output="screen" />
     <node name="osv_recon" pkg="osv_recon" type="osv_recon.py" output="screen" />

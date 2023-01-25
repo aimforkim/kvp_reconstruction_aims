@@ -82,6 +82,8 @@ RUN ["/bin/bash", "-c", "rm -rf /var/lib/apt/lists/*"]
 RUN mkdir -p dev_ws/src
 WORKDIR /dev_ws/src
 
+RUN git clone https://github.com/rjwb1/realsense-ros.git
+
 # Bash final stage
 # ----------------------------------------
 FROM base as bash
