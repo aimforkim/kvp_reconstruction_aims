@@ -1,6 +1,6 @@
 ARG ROSDISTRO=noetic
 
-FROM ros:$ROSDISTRO-robot
+FROM ros:$ROSDISTRO-robot as base
 
 ARG ROSDISTRO
 
@@ -82,13 +82,45 @@ RUN ["/bin/bash", "-c", "rm -rf /var/lib/apt/lists/*"]
 RUN mkdir -p dev_ws/src
 WORKDIR /dev_ws/src
 
-# Clone pkgs
-RUN ["/bin/bash", "-c", "git clone https://github.com/rjwb1/realsense-ros.git"]
+# Bash final stage
+# ----------------------------------------
+FROM base as bash
+ARG ROSDISTRO
 
 # Copy local pkg's from host to container
 COPY . /dev_ws/src/
 
 # Build catkin workspace
+WORKDIR /dev_ws
+RUN ["/bin/bash", "-c", "source /opt/ros/$ROSDISTRO/setup.bash &&\
+    catkin config --cmake-args -DCMAKE_BUILD_TYPE=Release &&\
+    catkin build \
+    "]
+
+# Copy and make setup script executable
+COPY .docker/setup.bash /dev_ws/setup.bash
+RUN ["/bin/bash", "-c", " chmod 777 /dev_ws/setup.bash"]
+
+# Copy and make entrypoint script executable
+RUN ["/bin/bash", "-c", "cp /dev_ws/src/.docker/entrypoint.sh / && chmod 777 /entrypoint.sh"]
+ENTRYPOINT [ "/entrypoint.sh" ]
+
+# Start bash shell
+CMD ["bash"]
+
+# Zsh final stage
+# ----------------------------------------
+FROM base as zsh
+ARG ROSDISTRO
+
+# install zsh and remove apt cache
+RUN apt-get update && apt-get install -y \
+    zsh \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy local pkg's from host to container
+COPY . /dev_ws/src/
+
 WORKDIR /dev_ws
 RUN ["/bin/bash", "-c", "source /opt/ros/$ROSDISTRO/setup.bash &&\
     catkin config --cmake-args -DCMAKE_BUILD_TYPE=Release &&\

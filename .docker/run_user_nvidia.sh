@@ -2,7 +2,9 @@
 
 # privileged flag required for ubuntu 20.04
 
-echo -e "Starting up the ros_osv container"
+echo -e "Starting up the user kvp_recon container \n >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+echo -e "This container will access to the users home directory and log in as the user with their password and x sever access.\nYou will not own the workspace though, use sudo chown -R $USER /dev_ws"
+echo -e "Source the workspace with source devel/setup.bash"
 
 docker run -it --privileged \
     --user=$(id -u $USER):$(id -g $USER) \
@@ -19,4 +21,4 @@ docker run -it --privileged \
     --volume="/dev:/dev" \
     --net=host \
     --gpus 'all,"capabilities=compute,display,graphics,utility"' \
-    kvp_recon_ros:latest
+    kvp_recon:latest
