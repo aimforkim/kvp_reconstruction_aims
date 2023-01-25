@@ -17,9 +17,9 @@ start_srv_req.tracking_frame = 'tcp_link'
 start_srv_req.relative_frame = 'base_link'
 start_srv_req.translation_distance = 0.0
 start_srv_req.rotational_distance = 0.0
-start_srv_req.live = True
-start_srv_req.tsdf_params.voxel_length = 0.02
-start_srv_req.tsdf_params.sdf_trunc = 0.04
+start_srv_req.live = False
+start_srv_req.tsdf_params.voxel_length = 0.001
+start_srv_req.tsdf_params.sdf_trunc = 0.002
 start_srv_req.tsdf_params.min_box_values = Vector3(x=0.0, y=0.0, z=0.0)
 start_srv_req.tsdf_params.max_box_values = Vector3(x=0.0, y=0.0, z=0.0)
 start_srv_req.rgbd_params.depth_scale = 1000
