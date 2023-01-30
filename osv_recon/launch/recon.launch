@@ -6,7 +6,7 @@
     <node name="osv_recon" pkg="osv_recon" type="osv_recon.py" output="screen" />
     <!-- Realsense -->
         <include file="$(find realsense2_camera)/launch/rs_camera.launch">
-        <arg name="enable_pointcloud" value="true" />
+        <!-- <arg name="enable_pointcloud" value="true" /> -->
         <!-- <arg name="ordered_pc" value="true" /> -->
         <!-- <arg name="filters" value="pointcloud" /> -->
         <arg name="clip_distance" value="0.50" />
