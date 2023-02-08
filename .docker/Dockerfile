@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     ssh \
     git \
     curl \
+    terminator \
     python3-pip \
     python3-flake8 \
     build-essential \
