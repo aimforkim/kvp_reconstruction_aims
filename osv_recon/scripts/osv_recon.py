@@ -18,17 +18,17 @@ start_srv_req.relative_frame = 'base_link'
 start_srv_req.translation_distance = 0.0
 start_srv_req.rotational_distance = 0.0
 start_srv_req.live = False
-start_srv_req.tsdf_params.voxel_length = 0.001
-start_srv_req.tsdf_params.sdf_trunc = 0.002
+start_srv_req.tsdf_params.voxel_length = 0.002
+start_srv_req.tsdf_params.sdf_trunc = 0.004
 start_srv_req.tsdf_params.min_box_values = Vector3(x=0.0, y=0.0, z=0.0)
 start_srv_req.tsdf_params.max_box_values = Vector3(x=0.0, y=0.0, z=0.0)
 start_srv_req.rgbd_params.depth_scale = 1000
-start_srv_req.rgbd_params.depth_trunc = 0.5
+start_srv_req.rgbd_params.depth_trunc = 0.30
 start_srv_req.rgbd_params.convert_rgb_to_intensity = False
 
 stop_srv_req = StopReconstructionRequest()
 # stop_srv_req.archive_directory = '/dev_ws/src.reconstruction/'
-stop_srv_req.mesh_filepath = '/home/v/test.ply'
+stop_srv_req.mesh_filepath = '/home/aims/test1_withbase2.ply'
 # stop_srv_req.normal_filters = [NormalFilterParams(
 #                     normal_direction=Vector3(x=0.0, y=0.0, z=1.0), angle=90)]
 # stop_srv_req.min_num_faces = 1000

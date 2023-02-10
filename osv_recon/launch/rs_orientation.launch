@@ -1,0 +1,17 @@
+<launch>
+    <!-- <node pkg="tf" type="static_transform_publisher" name="camera_link_broadcaster" args="0 0 0 0 0 1 0 tcp_link camera_link 100" /> -->
+    <node pkg="tf" type="static_transform_publisher" name="camera_link_broadcaster" args="0 0 0 0.5 -0.5 0.5 0.5 tcp_link camera_link 100" />
+    <node type="rviz" name="rviz" pkg="rviz" args="-d $(find osv_recon)/rviz/osv_recon.rviz" />
+    <node name="osv" pkg="ros_osv" type="osv_node.py" output="screen" />
+    <!-- Realsense -->
+        <include file="$(find realsense2_camera)/launch/rs_camera.launch">
+        <arg name="enable_pointcloud" value="true" />
+        <!-- <arg name="ordered_pc" value="true" /> -->
+        <!-- <arg name="filters" value="pointcloud" /> -->
+        <!-- <arg name="clip_distance" value="0.50" />
+        <arg name='enable_depth' value='true' /> 
+        <arg name="align_depth" value="true" />
+        <arg name="color_fps" value="30" />
+        <arg name="depth_fps" value="30" /> -->
+    </include>
+</launch>
