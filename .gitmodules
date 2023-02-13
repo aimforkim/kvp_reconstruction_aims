@@ -1,7 +1,3 @@
-[submodule "ros_osv"]
-	path = ros_osv
-	url = git@github.com:aimforkim/ros_osv.git
-	branch = dev
 [submodule "industrial_reconstruction"]
 	path = industrial_reconstruction
 	url = git@github.com:aimforkim/industrial_reconstruction.git
