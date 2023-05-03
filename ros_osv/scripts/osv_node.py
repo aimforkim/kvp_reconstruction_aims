@@ -10,8 +10,8 @@ from std_msgs.msg import Bool
 
 DO = 25
 FRAMES = ["BASE_C", "POS_ACT"]
-FRAME_IDS = ["world", "base"]
-CHILD_FRAME_IDS = ["base", "tcp"]
+FRAME_IDS = ["world", "base_link"]
+CHILD_FRAME_IDS = ["base_link", "tcp_link"]
 
 
 def list_to_tf(frame_id: str, child_frame_id: str, pos: List[float]) -> TransformStamped:
