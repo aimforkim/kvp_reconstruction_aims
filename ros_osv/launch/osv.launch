@@ -1,0 +1,4 @@
+<launch>
+    <node type="rviz" name="rviz" pkg="rviz" args="-d $(find ros_osv)/rviz/osv.rviz" />
+    <!-- <node name="osv" pkg="ros_osv" type="osv_node.py" output="screen" /> -->
+</launch>
